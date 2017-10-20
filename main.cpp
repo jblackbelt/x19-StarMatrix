@@ -6,26 +6,32 @@ int main()
 {
     int col;
     int row;
-    cout << "Please insert # of rows then # of colums" << endl;
+    cout << "Enter rows and columns of stars:" << endl;
     cin >> row >> col;
-    vector < vector < char > > vec ( row , vector < char > (col) ) ;
-    for ( int i = 0; i<row ; i++)
+    if (row <=0 || col <=0)
     {
-        for ( int x = 0; x<col; x++)
-        {
-            vec[i][x] = '*';
-        }
-        
+        return 0;  
     }
-    for ( int i = 0; i<row ; i++)
+    else
     {
-        for ( int x = 0; x<col; x++)
-        {
-            cout << vec[i][x];
-        }
-        cout << endl;
+      vector < vector < char > > vec ( row , vector < char > (col) ) ;
+      for ( int i = 0; i<row ; i++)
+      {
+          for ( int x = 0; x<col; x++)
+          {
+              vec[i][x] = '*';
+          }
+          
+      }
+      for ( int i = 0; i<row ; i++)
+      {
+          for ( int x = 0; x<col; x++)
+          {
+              cout << vec[i][x];
+          }
+          cout << endl;
+      }
     }
-
 
     return 0;
 }
